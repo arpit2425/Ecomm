@@ -8,9 +8,11 @@ import Checkout from "./pages/Checkout";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Login from "./pages/Login";
+import Header from "./components/Header";
 export default function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Home />
