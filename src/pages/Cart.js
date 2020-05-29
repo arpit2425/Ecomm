@@ -5,7 +5,7 @@ import CartItem from "../components/Cart/CartItem";
 import { Link } from "react-router-dom";
 export default function Cart() {
   const { cart, total } = React.useContext(CartContext);
-  let user = false;
+  let user = true;
   if (cart.length === 0) {
     return <EmptyCart />;
   }
@@ -16,7 +16,7 @@ export default function Cart() {
       {cart.map((item) => {
         return <CartItem key={item.id} {...item} />;
       })}
-      <h2>total : $ {total}</h2>
+      <h2>total : ₹ {total}</h2>
       {user ? (
         <Link to="/checkout" className="btn btn-primary btn-block">
           checkout
