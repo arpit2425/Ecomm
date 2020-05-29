@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./../assets/logo.svg";
+import logo from "./../assets/ecomm.svg";
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
