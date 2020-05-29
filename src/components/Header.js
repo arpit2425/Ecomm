@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./../assets/ecomm.svg";
 import { Link } from "react-router-dom";
+import CartLink from "./Cart/CartLink";
 export default function Header() {
   return (
     <header className="header">
@@ -23,7 +24,9 @@ export default function Header() {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">
+                <CartLink />
+              </Link>
             </li>
           </div>
         </ul>
