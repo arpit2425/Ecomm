@@ -12,9 +12,9 @@ function ProductsContextProvider({ children }) {
     axios
       .get(`https://cors-anywhere.herokuapp.com/${url}/products`, {})
       .then((response) => {
-        // const featured = featuredProducts(response.data);
+        const featured = featuredProducts(response.data);
         setProducts(response.data);
-        // setFeatured(featured);
+        setFeatured(featured);
         setLoading(false);
       });
 
