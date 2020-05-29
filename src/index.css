@@ -146,6 +146,7 @@ Header
 .logo {
   margin: 0 auto;
   width: 9rem;
+  height: 70px;
 }
 .header ul {
   display: flex;
