@@ -16,9 +16,27 @@ export default function Login () {
 
   let isEmpty = !email || !password || !username || alert.show
 
-  const toggleMember = () => {}
+  const toggleMember = () => {
+    setIsMember(prevMember => {
+      let isMember = !prevMember
+      isMember ? setUsername('default') : setUsername('')
+      return isMember
+    })
+  }
 
-  const handleSubmit = async e => {}
+  const handleSubmit = async e => {
+    e.preventDefault()
+    let response
+    if (isMember) {
+      response = await loginUser({ email, password })
+    } else {
+      response = await registerUser({ email, password, username })
+    }
+    if (response) {
+      console.log('success')
+      console.log(response)
+    }
+  }
 
   return (
     <section className='form section'>
