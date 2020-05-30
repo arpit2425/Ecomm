@@ -8,7 +8,10 @@ import { useHistory } from 'react-router-dom'
 import { UserContext } from '../context/user'
 export default function Login () {
   const history = useHistory()
+  // setup user context
+  const { userLogin, alert, showAlert } = React.useContext(UserContext)
 
+  // state values
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [username, setUsername] = React.useState('default')
@@ -25,6 +28,10 @@ export default function Login () {
   }
 
   const handleSubmit = async e => {
+    showAlert({
+      msg: 'accessing user data. please wait...'
+    })
+    // alert
     e.preventDefault()
     let response
     if (isMember) {
@@ -32,9 +39,24 @@ export default function Login () {
     } else {
       response = await registerUser({ email, password, username })
     }
+
     if (response) {
-      console.log('success')
-      console.log(response)
+      const {
+        jwt: token,
+        user: { username }
+      } = response.data
+      const newUser = { token, username }
+      userLogin(newUser)
+      showAlert({
+        msg: `you are logged in : ${username}. shop away my friend`
+      })
+      history.push('/products')
+    } else {
+      showAlert({
+        msg: 'there was an error. please try again...',
+        type: 'danger'
+      })
+      //  show alert
     }
   }
 

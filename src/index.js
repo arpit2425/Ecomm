@@ -1,15 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import ProductsContextProvider from "./context/products";
-import { CartContext, CartProvider } from "./context/cart";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import ProductsContextProvider from './context/products'
+import { CartContext, CartProvider } from './context/cart'
+import { UserContext, UserProvider } from './context/user'
 
 ReactDOM.render(
-  <ProductsContextProvider>
-    <CartProvider>
-      <App />
-    </CartProvider>
-  </ProductsContextProvider>,
-  document.getElementById("root")
-);
+  <UserProvider>
+    <ProductsContextProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </ProductsContextProvider>
+  </UserProvider>,
+  document.getElementById('root')
+)
