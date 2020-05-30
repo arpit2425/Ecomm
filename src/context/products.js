@@ -10,7 +10,8 @@ function ProductsContextProvider({ children }) {
   React.useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://cors-anywhere.herokuapp.com/${url}/products`, {})
+      // .get(`https://cors-anywhere.herokuapp.com/${url}/products`, {})
+      .get(`${url}/products`, {})
       .then((response) => {
         const featured = featuredProducts(response.data);
         setProducts(response.data);
