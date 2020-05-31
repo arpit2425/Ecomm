@@ -99,7 +99,7 @@ const CardForm = injectStripe(Checkout);
 
 const StripeWrapper = () => {
   return (
-    <StripeProvider apiKey="pk_test_RmWPHoQAmlEf6RiOlsMRkEeJ00XzgNQe2k">
+    <StripeProvider apiKey="pk_test_y4RqvASvCbSkcpFMaE473erl00OluYWr6n">
       <Elements>
         <CardForm></CardForm>
       </Elements>
