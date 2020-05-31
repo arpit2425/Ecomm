@@ -61,7 +61,7 @@ function Checkout(props) {
       <h2 className="section-title">checkout</h2>
       <form className="checkout-form">
         <h3>
-          order total : <span>${total}</span>
+          order total : <span>₹{total}</span>
         </h3>
         {/* single input */}
         <div className="form-control">
