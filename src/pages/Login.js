@@ -48,7 +48,7 @@ export default function Login () {
       const newUser = { token, username }
       userLogin(newUser)
       showAlert({
-        msg: `you are logged in : ${username}. shop away my friend`
+        msg: `you are logged in : ${username}.`
       })
       history.push('/products')
     } else {
